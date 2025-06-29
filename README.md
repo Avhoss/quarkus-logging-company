@@ -108,7 +108,7 @@ VALUES('Reno', 'Aditya', 'company1'),
 - After the docker for kafka and zookeeper is up and the DB is all setup -> Go to the project and run mvn quarkus:dev
 
 ## Testing the Kafka through API
-You may try to update Employee from the API: 
+You may try to update Employee from the POST request API: 
 <a>http://localhost:8080/company-access/employee</a>
 </br> 
 with payload such as
@@ -119,7 +119,7 @@ with payload such as
     "workplaceName": "company3"</br> 
 }
 </br></br> </br> 
-You may try to update Company from the API:
+You may try to update Company from the POST request API:
 http://localhost:8080/company-access/company</a>
 with payload such as
 </br> {</br> 
