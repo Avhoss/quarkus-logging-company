@@ -18,8 +18,7 @@ This is a showcase project demonstrating how to implement a Kafka-based logging 
 - **Quarkus 3.2.4**
 - **Apache Kafka**
 - **MSSQL Server**
-- **Panache ORM (Hibernate)**
-- **SmallRye Kafka**
+- **Panache ORM**
 
 ## Kafka and Zookeeper
 Have docker ready in your local and use the following configuration of docker-compose
