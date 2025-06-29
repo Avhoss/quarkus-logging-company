@@ -89,10 +89,48 @@ CREATE TABLE ChangeLog (
 	log_date DATETIME DEFAULT GETDATE()
 )
 
+-- [5] Creating dummy data for company and employee
+</br>
+INSERT INTO Company(company_name, sector, location)
+VALUES ('Company1', 'Financial', 'Surabaya'),
+('Company2', 'Technology', 'DKI Jakarta'),
+('Company3', 'Health', 'Manado')
+</br>
+INSERT INTO Employee(first_name, last_name, workplace_name)
+VALUES('Reno', 'Aditya', 'company1'),
+('John', 'Doe', 'company3'),
+('Jane', 'Doe', 'company2')
+
+
 </details>
 
 ## Starting
-After the docker for kafka and zookeeper is up and the DB is all setup -> Go to the project and run mvn quarkus:dev
+- After the docker for kafka and zookeeper is up and the DB is all setup -> Go to the project and run mvn quarkus:dev
+
+## Testing the Kafka through API
+You may try to update Employee from the API: 
+<a>http://localhost:8080/company-access/employee</a>
+</br> 
+with payload such as
+</br> {</br> 
+    "id": 1,</br> 
+    "firstName": "Reno",</br> 
+    "lastName": "Aditya",</br> 
+    "workplaceName": "company3"</br> 
+}
+</br></br> </br> 
+You may try to update Company from the API:
+http://localhost:8080/company-access/company</a>
+with payload such as
+</br> {</br> 
+    "companyName": "company2",</br> 
+    "sector": "Health",</br> 
+    "location": "DKI Jakarta"</br> 
+}
+</br></br> </br> 
+GET Request from API
+<a>http://localhost:8080/company-access/change-log</a></br> 
+To see the updates from the Log API of both company and employee
 
 ## Contact
 Feel free to reach out if you're a recruiter or developer interested in this showcase:</br>
